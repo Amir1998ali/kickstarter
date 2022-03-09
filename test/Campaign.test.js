@@ -34,6 +34,11 @@ beforeEach( async () => {
         campaignAddress
     );
 
+        await campaign.methods.contribute().send({
+            from : accounts[0], 
+            value: web3.utils.toWei('10', 'ether')
+        });
+
 });
 
 
@@ -71,25 +76,21 @@ describe('Campaigns', () => {
     });
 
     it("allows a manager to make a payment request", async () => {
-        console.log("yo 1");
         await campaign.methods
           .createRequest("Buy batteries", "100", accounts[1])
           .send({
             from: accounts[0],
             gas: "1000000",
           });
-        console.log("yo 2");
         const request = await campaign.methods.requests(0).call();
-        console.log("yo 3");
-        console.log(request.description);
         assert.equal("Buy batteries", request.description);
       });
 
     it('processes request', async () => {
-        await campaign.methods.contribute().send({
-            from : accounts[0], 
-            value: web3.utils.toWei('10', 'ether')
-        });
+        // await campaign.methods.contribute().send({
+        //     from : accounts[0], 
+        //     value: web3.utils.toWei('10', 'ether')
+        // });
 
         await campaign.methods
             .createRequest('A', web3.utils.toWei('5', 'ether'), accounts[1])
