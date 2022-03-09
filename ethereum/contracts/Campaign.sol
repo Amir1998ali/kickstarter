@@ -81,6 +81,7 @@ contract Campaign {
         request.approvals[msg.sender] = true;
         request.approvalCount ++;
     }
+    
 
     function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
