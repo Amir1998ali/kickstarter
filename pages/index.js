@@ -1,8 +1,8 @@
 //server
-
 //first page we show when the address is called
 //it looks for pages and index.js to start with
 import React, {Component} from 'react';
+import { Card, Button  } from 'semantic-ui-react';
 import factory from '../ethereum/factory'
 
 class CampaignIndex extends Component {
@@ -16,9 +16,30 @@ class CampaignIndex extends Component {
         return { campaigns };
     }
 
+    renderCampaigns() {
+        // pass a func, 
+        const items = this.props.campaigns.map(address => {
+            return {
+                header: address,
+                description: <a>View Campaign</a>,
+                fluid: true
+            };
+        });
+        return <Card.Group items={items}/>
+    }
+
     render() {
         // after that send to browser
-        return <div>{this.props.campaigns[0]}</div>
+        return <div>
+              <link async rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"/>
+            <h3>Open Campaigns</h3>
+            {this.renderCampaigns()}
+            <Button
+                content="Create Campaign"
+                icon="add circle"
+                primary={true}
+            />
+            </div>
         // then translated by next to HTML for the browser
     }
 }
