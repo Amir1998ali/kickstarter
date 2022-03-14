@@ -45,7 +45,7 @@ contract Campaign {
         manager = creator;
         minimumContribution = minimum;
     }
-// hug
+    //Testing
     function contribute() public payable {
         require(msg.value > minimumContribution);
         // That person gets approved by the contract
