@@ -20,6 +20,8 @@ beforeEach( async () => {
 
     // make an instance using factory
     // we use string 
+    // you are making a transaction and you pay gas
+    // to pay the node to run this for you 
     await factory.methods.createCampaign('100').send({
         from: accounts[0],
         gas: '1000000'
