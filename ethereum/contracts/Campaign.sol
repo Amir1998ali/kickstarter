@@ -2,7 +2,7 @@ pragma solidity ^0.4.17;
 
 contract CampaignFactory {
     address[] public deployedCampaigns;
-
+//hge
     function createCampaign(uint minimum) public  {
         // deploy new instance of campain
         // the msg.sender is going to be this one, which is going to be the user
@@ -45,7 +45,7 @@ contract Campaign {
         manager = creator;
         minimumContribution = minimum;
     }
-
+// hug
     function contribute() public payable {
         require(msg.value > minimumContribution);
         // That person gets approved by the contract
