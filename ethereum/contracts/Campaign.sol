@@ -2,7 +2,6 @@ pragma solidity ^0.4.17;
 
 contract CampaignFactory {
     address[] public deployedCampaigns;
-//hge
     function createCampaign(uint minimum) public  {
         // deploy new instance of campain
         // the msg.sender is going to be this one, which is going to be the user
@@ -93,4 +92,20 @@ contract Campaign {
         request.recipient.transfer(request.value);
         request.complete = true;
     }
+
+    // function getSummary() public view returns (
+    //     uint, uint, uint, uint, address
+    // ) {
+    //     return (
+    //         minimumContribution,
+    //         this.balance,
+    //         requests.length,
+    //         approversCount,
+    //         manager
+    //     );
+    // }
+
+    // function getRequestCount() public view returns (uint) {
+    //     return requests.length;
+    // }
 }

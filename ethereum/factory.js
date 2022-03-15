@@ -5,7 +5,7 @@ import CampaignFactory from './build/CampaignFactory.json'
 // connet to the existing network
 const instance = new web3.eth.Contract(
     JSON.parse(CampaignFactory.interface),
-    '0x94129A9f230F7f31925Af501cCe6FA463DC19E1E'
+    '0xD77962e6322176fE24d8b2993E522C530c7a472D'
 );
 
 export default instance;
