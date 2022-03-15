@@ -28,10 +28,10 @@ class CampaignShow extends Component {
       } = this.props;
 
       const items = [{
-          header: manager,
-          meta:'Address of Manager',
-          description: 'The manager created this campaign and can create requests to withdraw money',
-          style: { overflowWrap: 'break-word'}
+            header: manager,
+            meta:'Address of Manager',
+            description: 'The manager created this campaign and can create requests to withdraw money',
+            style: { overflowWrap: 'break-word'}
         },
         {
             header: minimumContribution,
