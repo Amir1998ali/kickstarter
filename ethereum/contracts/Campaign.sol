@@ -81,8 +81,6 @@ contract Campaign {
         request.approvalCount ++;
     }
 
-    // add comment
-    // add comment 2
     function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
         // play around with the complete variable
